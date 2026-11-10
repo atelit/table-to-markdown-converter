@@ -1,4 +1,6 @@
-![Table to Markdown Logo](logo.png)
+<p align="center">
+  <img src="logo.png" width="128" height="128" alt="Table to Markdown Logo"/>
+</p>
 
 # Table to Markdown
 
