@@ -25,7 +25,7 @@ echo "Optimizing README.md for local installation..."
 sed -E '/<img src=.*alt="Table to Markdown Logo"/d; /<p align="center">/,/<\/p>/d' README.md > ./extension/README.md
 
 # Append repository link for updates to the modified README
-echo -e "\n\n## Updates and Support\nSince this extension is installed manually, it does not support automatic updates. Please check the official repository for the latest versions: [GitHub Repository](https://github.com)" >> ./extension/README.md
+echo -e "\n\n## Updates and Support\nSince this extension is installed manually, it does not support automatic updates. Please check the official repository for the latest versions: [GitHub Repository](https://github.com/atelit/table-to-markdown-converter)" >> ./extension/README.md
 
 # 5. Zip the archive properly with 'extension' as the root folder
 zip -q -r ./plugin.zip ./extension

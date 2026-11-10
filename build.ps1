@@ -24,7 +24,7 @@ Write-Host "Optimizing README.md for local installation..." -ForegroundColor Cya
 $ReadmeContent = Get-Content -Path ".\README.md" -Raw
 # Strip the HTML logo container
 $CleanReadme = $ReadmeContent -replace '(?s)<p align="center">.*?</p>', ''
-$CleanReadme = $CleanReadme + "`n`n## Updates and Support`nSince this extension is installed manually, it does not support automatic updates. Please check the official repository for the latest versions: [GitHub Repository](https://github.com)"
+$CleanReadme = $CleanReadme + "`n`n## Updates and Support`nSince this extension is installed manually, it does not support automatic updates. Please check the official repository for the latest versions: [GitHub Repository](https://github.com/atelit/table-to-markdown-converter)"
 Set-Content -Path ".\extension\README.md" -Value $CleanReadme
 
 # 5. Zip the archive
