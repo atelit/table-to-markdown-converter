@@ -1,0 +1,44 @@
+{
+  "name": "table-to-markdown-converter",
+  "displayName": "Table to Markdown",
+  "description": "Convert tables between Text and Markdown formats",
+  "version": "1.0.0",
+  "publisher": "atelit",
+  "extensionKind": [
+    "ui",
+    "workspace"
+  ],
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./extension.js",
+  "activationEvents": [],
+  "contributes": {
+    "commands": [
+      {
+        "command": "table-to-markdown.toggle",
+        "title": "Convert / Revert Table Format"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "table-to-markdown.toggle",
+        "key": "alt+shift+m",
+        "mac": "alt+shift+m",
+        "when": "editorHasSelection && editorTextFocus"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "when": "editorHasSelection",
+          "command": "table-to-markdown.toggle",
+          "group": "modification"
+        }
+      ]
+    }
+  }
+}
