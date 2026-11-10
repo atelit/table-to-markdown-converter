@@ -26,19 +26,14 @@ A lightweight and secure VS Code extension that converts tables between text (fo
 
 ## Installation
 
-Since this is a custom secure extension, you can install it manually in less than a minute:
+### Manual Installation via VSIX (Recommended)
+1. Download or package the `.vsix` file using the build scripts.
+2. Open VS Code and navigate to the **Extensions** tab (`Ctrl + Shift + X` / `Cmd + Shift + X`).
+3. Click on the **`...`** (three dots) icon at the top right corner of the Extensions panel.
+4. Select **Install from VSIX...** from the dropdown menu and choose the generated file.
 
-### For Windows
-1. Copy the extension folder containing `package.json`, `extension.js`, `logo.png`, and this `README.md`.
-2. Paste it into your VS Code extensions directory:
-   `C:\Users\<Your_Username>\.vscode\extensions\`
-3. Restart VS Code.
-
-### For macOS / Linux
-1. Copy the extension folder containing `package.json`, `extension.js`, `logo.png`, and this `README.md`.
-2. Paste it into your VS Code extensions directory:
-   `~/.vscode/extensions/`
-3. Restart VS Code.
+### Important Note on Updates
+Because this extension is securely installed from a local file, **it does not support automatic updates**. To get the latest features, fixes, and improvements, please check the official repository manually: [https://github.com/atelit/table-to-markdown-converter](https://github.com/atelit/table-to-markdown-converter).
 
 ## Packaging into `.vsix` (No Node.js / npm required)
 
