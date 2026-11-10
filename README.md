@@ -1,3 +1,5 @@
+![Table to Markdown Logo](logo.png)
+
 # Table to Markdown
 
 A lightweight and secure VS Code extension that converts tables between text (for example, Confluence (TSV)) and Markdown formats in both directions with a single hotkey or click.
@@ -11,63 +13,54 @@ A lightweight and secure VS Code extension that converts tables between text (fo
 ## How to Use
 
 1. **Select** the table text in your editor.
-2. Press **`Alt + Shift + M`** (or right-click and choose `Convert / Revert Table Format`).
+2. Press your platform's hotkey (or right-click and choose `Convert / Revert Table Format`).
 3. The extension will automatically choose whether to convert or revert based on your selection!
 
 ## Keyboard Shortcuts (Keybindings)
 
 | Command | Windows / Linux | macOS | Description |
 | :--- | :--- | :--- | :--- |
-| **Convert / Revert Table Format** | `Alt + Shift + M` | `Alt + Shift + M` | Toggles table format back and forth |
+| **Convert / Revert Table Format** | `Alt + Shift + M` | `Option (⌥) + Shift + M` | Toggles table format back and forth |
 
 ## Installation
 
 Since this is a custom secure extension, you can install it manually in less than a minute:
 
 ### For Windows
-1. Copy the extension folder containing `package.json`, `extension.js`, and this `README.md`.
+1. Copy the extension folder containing `package.json`, `extension.js`, `logo.png`, and this `README.md`.
 2. Paste it into your VS Code extensions directory:
    `C:\Users\<Your_Username>\.vscode\extensions\`
 3. Restart VS Code.
 
 ### For macOS / Linux
-1. Copy the extension folder containing `package.json`, `extension.js`, and this `README.md`.
+1. Copy the extension folder containing `package.json`, `extension.js`, `logo.png`, and this `README.md`.
 2. Paste it into your VS Code extensions directory:
    `~/.vscode/extensions/`
 3. Restart VS Code.
 
 ## Packaging into `.vsix` (No Node.js / npm required)
 
-If you want to share this extension with your team as a single installable file, you can package and install it entirely using Windows PowerShell (either via standalone console or via VS Code built-in terminal):
+If you want to share this extension with your team as a single installable file, you can package it entirely using the native build scripts included in this repository.
 
-### Step 1: Package the Extension
+### Option A: For Windows (PowerShell)
+1. Open PowerShell in the project root folder.
+2. Run the build script:
+   ```powershell
+   .\build.ps1
+   ```
 
-1. Open **PowerShell** in the root folder of your project (where `package.json` is located) or simply open the folder in VS Code and press **`Ctrl + \``** to open the built-in terminal.
-2. Copy and paste the following script into the terminal and hit **Enter**:
+### Option B: For macOS / Linux (Terminal)
+1. Open Terminal in the project root folder.
+2. Run the build script:
+   ```bash
+   ./build.sh
+   ```
 
-```powershell
-# 1. Create a mandatory temporary structure folder
-New-Item -ItemType Directory -Force -Path ".\extension"
-
-# 2. Copy extension assets
-Copy-Item "package.json", "extension.js", "README.md" -Destination ".\extension"
-
-# 3. Zip the archive
-Compress-Archive -Path ".\extension" -DestinationPath ".\plugin.zip" -Force
-
-# 4. Rename to VS Code extension format and clean up
-Rename-Item -Path ".\plugin.zip" -NewName "table-to-markdown-converter-1.0.0.vsix" -Force
-Remove-Item -Recurse -Force ".\extension"
-```
-
-3. A new file named `table-to-markdown-converter-1.0.0.vsix` will instantly appear in your folder.
-4. Right-click on `table-to-markdown-converter-1.0.0.vsix` in the VS Code file explorer and choose "Install Extension VSIX" from the context menu, or follow Step 2.
-
-### Step 2: Install the `.vsix` File
-1. Open VS Code and navigate to the **Extensions** tab on the left sidebar (`Ctrl + Shift + X`).
+### Installing the Generated `.vsix` File
+1. Open VS Code and navigate to the **Extensions** tab on the left sidebar (`Ctrl + Shift + X` / `Cmd + Shift + X`).
 2. Click on the **`...`** (three dots) icon at the very top right corner of the Extensions panel.
 3. Select **Install from VSIX...** from the dropdown menu.
-4. Locate and select the generated `table-to-markdown-converter-1.0.0.vsix` file.
+4. Locate and select the generated `.vsix` file.
 5. The extension is now successfully installed and ready to use team-wide!
 
 ## Extension Settings
